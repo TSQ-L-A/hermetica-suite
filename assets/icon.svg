@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Fundo -->
+  <rect width="256" height="256" rx="40" fill="#100c1e"/>
+
+  <!-- Anel externo dourado -->
+  <circle cx="128" cy="128" r="112" fill="none" stroke="#c8a84b" stroke-width="2.5"/>
+
+  <!-- Anel médio -->
+  <circle cx="128" cy="128" r="82" fill="none" stroke="#c8a84b" stroke-width="1.2" stroke-dasharray="4 4"/>
+
+  <!-- Cruz hermética (AC/DC/MC/FC) -->
+  <line x1="16"  y1="128" x2="240" y2="128" stroke="#c8a84b" stroke-width="1.2" opacity="0.6"/>
+  <line x1="128" y1="16"  x2="128" y2="240" stroke="#c8a84b" stroke-width="1.2" opacity="0.6"/>
+
+  <!-- Triângulo superior (Fogo — Geomantia) -->
+  <polygon points="128,42 108,76 148,76" fill="none" stroke="#e8c870" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="112" y1="66" x2="144" y2="66" stroke="#e8c870" stroke-width="1.8"/>
+
+  <!-- Símbolo do Sol ☉ — centro (Astrologia) -->
+  <circle cx="128" cy="128" r="22" fill="none" stroke="#e8c870" stroke-width="2.5"/>
+  <circle cx="128" cy="128" r="5"  fill="#e8c870"/>
+
+  <!-- Arco de hora com marcações (Horae) — arco inferior -->
+  <path d="M 90 175 A 48 48 0 0 1 166 175" fill="none" stroke="#c8a84b" stroke-width="2"/>
+  <!-- Marcações de hora -->
+  <line x1="92"  y1="170" x2="88"  y2="180" stroke="#c8a84b" stroke-width="1.5"/>
+  <line x1="108" y1="180" x2="106" y2="191" stroke="#c8a84b" stroke-width="1.5"/>
+  <line x1="128" y1="183" x2="128" y2="195" stroke="#c8a84b" stroke-width="1.5"/>
+  <line x1="148" y1="180" x2="150" y2="191" stroke="#c8a84b" stroke-width="1.5"/>
+  <line x1="164" y1="170" x2="168" y2="180" stroke="#c8a84b" stroke-width="1.5"/>
+
+  <!-- Ponteiro de hora -->
+  <line x1="128" y1="128" x2="150" y2="168" stroke="#e8c870" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Estrela de 8 pontas (hermética) — cantos decorativos -->
+  <g opacity="0.35" fill="#c8a84b">
+    <circle cx="46"  cy="46"  r="3.5"/>
+    <circle cx="210" cy="46"  r="3.5"/>
+    <circle cx="46"  cy="210" r="3.5"/>
+    <circle cx="210" cy="210" r="3.5"/>
+  </g>
+
+  <!-- Planetas pequenos no anel -->
+  <circle cx="80"  cy="80"  r="4.5" fill="#b0b0e0"/>
+  <circle cx="176" cy="80"  r="3.5" fill="#f0a0c0"/>
+  <circle cx="176" cy="176" r="4"   fill="#cc4444"/>
+  <circle cx="80"  cy="176" r="3.5" fill="#e09030"/>
+
+  <!-- Texto HERMETICA fixo abaixo do arco -->
+  <text x="128" y="230" font-family="Georgia, serif" font-size="11" fill="#c8a84b"
+        letter-spacing="3" text-anchor="middle" opacity="0.85">HERMETICA</text>
+</svg>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Astra Hermetica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header id="header">
+    <span id="clock">00:00:00</span>
+    <span id="app-title">☉ ASTRA HERMETICA</span>
+    <div id="header-right">
+      <span id="elective-badge" class="hidden"></span>
+      <button id="btn-time-toggle" title="Astrologia Eletiva / Mapa Futuro">Eletiva</button>
+      <button id="btn-city">📍 <span id="city-label">—</span></button>
+      <button id="btn-hub" title="Voltar ao menu">Menu</button>
+      <button id="btn-close">✕</button>
+    </div>
+  </header>
+
+  <!-- Painel Eletivo -->
+  <div id="elective-panel" class="hidden">
+    <div id="elective-title">Astrologia Eletiva</div>
+    <div id="elective-row">
+      <button class="btn-nudge" id="btn-prev-m">−1M</button>
+      <button class="btn-nudge" id="btn-prev-d">−1D</button>
+      <button class="btn-nudge" id="btn-prev-h">−1H</button>
+      <input type="datetime-local" id="elective-input" />
+      <button class="btn-nudge" id="btn-next-h">+1H</button>
+      <button class="btn-nudge" id="btn-next-d">+1D</button>
+      <button class="btn-nudge" id="btn-next-m">+1M</button>
+      <button id="btn-now">Agora</button>
+    </div>
+  </div>
+
+  <div id="city-panel" class="hidden">
+    <div id="city-search-wrap">
+      <input id="city-search" type="text" placeholder="Buscar cidade..." autocomplete="off" spellcheck="false" />
+      <span id="city-search-status"></span>
+    </div>
+    <div id="city-list"></div>
+  </div>
+
+  <div id="main">
+    <div id="canvas-wrap">
+      <canvas id="chart"></canvas>
+    </div>
+
+    <div id="side">
+      <div id="planet-list"></div>
+      <div id="aspect-section">
+        <div id="aspect-title">Aspectos</div>
+        <div id="aspect-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="astro.js"></script>
+</body>
+</html>

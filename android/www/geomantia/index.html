@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Geomantia Hermetica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="header">
+    <span id="app-title">✦ GEOMANTIA HERMETICA</span>
+    <div id="header-right">
+      <button id="btn-hub">Menu</button>
+    </div>
+  </header>
+
+  <!-- ── Layout principal ── -->
+  <div id="main">
+
+    <!-- ── Painel de entrada ── -->
+    <div id="panel-input">
+
+      <div class="section-title">ENTRADA DAS MÃES</div>
+
+      <div id="mae-inputs">
+        <!-- Mãe 1 -->
+        <div class="mae-block" data-mae="0">
+          <div class="mae-header">
+            <span class="mae-label">Mãe 1</span>
+            <span class="mae-nome" data-mae="0">—</span>
+          </div>
+          <div class="mae-linhas">
+            <div class="linha-row" data-mae="0" data-linha="0">
+              <span class="linha-elem">Fogo</span>
+              <div class="linha-dots" data-mae="0" data-linha="0"><span class="dot-display">●●</span></div>
+            </div>
+            <div class="linha-row" data-mae="0" data-linha="1">
+              <span class="linha-elem">Ar</span>
+              <div class="linha-dots" data-mae="0" data-linha="1"><span class="dot-display">●●</span></div>
+            </div>
+            <div class="linha-row" data-mae="0" data-linha="2">
+              <span class="linha-elem">Água</span>
+              <div class="linha-dots" data-mae="0" data-linha="2"><span class="dot-display">●●</span></div>
+            </div>
+            <div class="linha-row" data-mae="0" data-linha="3">
+              <span class="linha-elem">Terra</span>
+              <div class="linha-dots" data-mae="0" data-linha="3"><span class="dot-display">●●</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mãe 2 -->
+        <div class="mae-block" data-mae="1">
+          <div class="mae-header">
+            <span class="mae-label">Mãe 2</span>
+            <span class="mae-nome" data-mae="1">—</span>
+          </div>
+          <div class="mae-linhas">
+            <div class="linha-row" data-mae="1" data-linha="0"><span class="linha-elem">Fogo</span><div class="linha-dots" data-mae="1" data-linha="0"><span class="dot-display">●●</span></div></div>
+            <div class="linha-row" data-mae="1" data-linha="1"><span class="linha-elem">Ar</span><div class="linha-dots" data-mae="1" data-linha="1"><span class="dot-display">●●</span></div></div>
+            <div class="linha-row" data-mae="1" data-linha="2"><span class="linha-elem">Água</span><div class="linha-dots" data-mae="1" data-linha="2"><span class="dot-display">●●</span></div></div>
+            <div class="linha-row" data-mae="1" data-linha="3"><span class="linha-elem">Terra</span><div class="linha-dots" data-mae="1" data-linha="3"><span class="dot-display">●●</span></div></div>
+          </div>
+        </div>
+
+        <!-- Mãe 3 -->
+        <div class="mae-block" data-mae="2">
+          <div class="mae-header">
+            <span class="mae-label">Mãe 3</span>
+            <span class="mae-nome" data-mae="2">—</span>
+          </div>
+          <div class="mae-linhas">
+            <div class="linha-row" data-mae="2" data-linha="0"><span class="linha-elem">Fogo</span><div class="linha-dots" data-mae="2" data-linha="0"><span class="dot-display">●●</span></div></div>
+            <div class="linha-row" data-mae="2" data-linha="1"><span class="linha-elem">Ar</span><div class="linha-dots" data-mae="2" data-linha="1"><span class="dot-display">●●</span></div></div>
+            <div class="linha-row" data-mae="2" data-linha="2"><span class="linha-elem">Água</span><div class="linha-dots" data-mae="2" data-linha="2"><span class="dot-display">●●</span></div></div>
+            <div class="linha-row" data-mae="2" data-linha="3"><span class="linha-elem">Terra</span><div class="linha-dots" data-mae="2" data-linha="3"><span class="dot-display">●●</span></div></div>
+          </div>
+        </div>
+
+        <!-- Mãe 4 -->
+        <div class="mae-block" data-mae="3">
+          <div class="mae-header">
+            <span class="mae-label">Mãe 4</span>
+            <span class="mae-nome" data-mae="3">—</span>
+          </div>
+          <div class="mae-linhas">
+            <div class="linha-row" data-mae="3" data-linha="0"><span class="linha-elem">Fogo</span><div class="linha-dots" data-mae="3" data-linha="0"><span class="dot-display">●●</span></div></div>
+            <div class="linha-row" data-mae="3" data-linha="1"><span class="linha-elem">Ar</span><div class="linha-dots" data-mae="3" data-linha="1"><span class="dot-display">●●</span></div></div>
+            <div class="linha-row" data-mae="3" data-linha="2"><span class="linha-elem">Água</span><div class="linha-dots" data-mae="3" data-linha="2"><span class="dot-display">●●</span></div></div>
+            <div class="linha-row" data-mae="3" data-linha="3"><span class="linha-elem">Terra</span><div class="linha-dots" data-mae="3" data-linha="3"><span class="dot-display">●●</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:16px;">PLANETA DA QUESTÃO</div>
+      <div id="planet-grid"></div>
+
+      <div id="btn-area">
+        <button id="btn-calcular">CALCULAR</button>
+        <button id="btn-limpar">LIMPAR</button>
+      </div>
+
+      <!-- Resultado resumido -->
+      <div id="resultado" class="hidden">
+        <div class="section-title" style="margin-top:16px;">RESULTADO</div>
+        <div id="resultado-lista"></div>
+      </div>
+
+    </div>
+
+    <!-- ── Área de visualização ── -->
+    <div id="panel-view">
+
+      <div id="view-tabs">
+        <button class="tab-btn active" data-tab="brasao">Brazão</button>
+        <button class="tab-btn" data-tab="casas">Mapa Geomântico</button>
+      </div>
+
+      <div id="view-content">
+        <canvas id="canvas-brasao"></canvas>
+        <canvas id="canvas-casas" class="hidden"></canvas>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="geo.js"></script>
+</body>
+</html>

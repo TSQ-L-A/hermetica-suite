@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#dcd4c3" />
+  <title>Tattvas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="header">
+    <span id="relogio">00:00:00</span>
+    <span id="app-title">△ TATTVAS</span>
+    <div id="header-right">
+      <button id="btn-cidade">📍 —</button>
+      <button id="btn-hub">Menu</button>
+    </div>
+  </header>
+
+  <!-- ── Main (scroll) ── -->
+  <div id="main">
+
+    <!-- ── Tattva atual ── -->
+    <section id="painel-atual">
+
+      <div class="painel-section-title">Tattva Atual</div>
+
+      <div id="bloco-planeta">
+        <span id="painel-simbolo"></span>
+        <div id="painel-info-texto">
+          <span id="painel-nome">—</span>
+          <span id="painel-elem">—</span>
+          <span id="painel-intervalo">—</span>
+        </div>
+      </div>
+
+      <div id="bloco-extras">
+        <div class="bloco-extra">
+          <div class="bloco-label">Sub-Tattva</div>
+          <div id="painel-sub">—</div>
+        </div>
+        <div class="bloco-extra">
+          <div class="bloco-label">Próximo Tattva</div>
+          <div id="painel-prox">—</div>
+        </div>
+      </div>
+
+      <div id="subs"></div>
+
+      <div id="bloco-sol">
+        <div class="sol-card">
+          <span class="sol-label">☀ Início do ciclo</span>
+          <span class="sol-val" id="info-nascer">—</span>
+        </div>
+        <div class="sol-card">
+          <span class="sol-label">☀ Próximo nascer</span>
+          <span class="sol-val" id="info-prox-nascer">—</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Tabela do dia ── -->
+    <section id="painel-tabela">
+
+      <div id="tabela-header">
+        <span id="tabela-titulo">Marés do Dia</span>
+        <div id="tabela-nav">
+          <button class="btn-dia" id="btn-hoje">Hoje</button>
+          <button class="btn-dia" id="btn-dia-ant">◀</button>
+          <span id="tabela-dia">—</span>
+          <button class="btn-dia" id="btn-dia-prox">▶</button>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th class="col-num">Ciclo</th>
+            <th class="col-inicio">Início</th>
+            <th class="col-fim">Fim</th>
+            <th>Tattva</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-body"></tbody>
+      </table>
+
+    </section>
+
+  </div><!-- /main -->
+
+  <!-- ── Modal de Cidade ── -->
+  <div id="modal-cidade">
+    <div id="modal-overlay"></div>
+    <div id="modal-box">
+      <div id="modal-topo">
+        <span id="modal-titulo">Selecionar Localização</span>
+        <button id="btn-modal-fechar">✕</button>
+      </div>
+      <div id="modal-busca">
+        <input id="input-cidade" type="text" placeholder="Digite o nome da cidade…" autocomplete="off" />
+      </div>
+      <div id="lista-cidades"></div>
+    </div>
+  </div>
+
+  <script src="tattvas.js"></script>
+</body>
+</html>

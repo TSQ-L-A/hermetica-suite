@@ -1,0 +1,482 @@
+:root {
+  --bg:        rgba(240, 236, 228, 0.95);
+  --bg2:       rgba(228, 222, 210, 1);
+  --bg3:       rgba(218, 210, 192, 1);
+  --gold:      #8a6a1a;
+  --gold-l:    #a07820;
+  --gold-d:    #c4a050;
+  --crimson:   #aa2020;
+  --silver:    #1a1820;
+  --silver-d:  #555060;
+  --border:    rgba(120, 95, 40, 0.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  font-family: Georgia, serif;
+  font-size: 15px;
+  color: var(--silver);
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* ── Header ── */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(220, 212, 195, 0.98);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  gap: 8px;
+}
+
+#relogio {
+  font-size: 14px;
+  color: var(--silver-d);
+  letter-spacing: 1px;
+  min-width: 75px;
+}
+
+#app-title {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 2.5px;
+  text-align: center;
+  flex: 1;
+}
+
+#btn-cidade {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--silver-d);
+  font-family: Georgia, serif;
+  font-size: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+#btn-cidade:active { border-color: var(--gold); color: var(--gold); }
+
+/* ── Main (scroll vertical) ── */
+#main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Painel de hora atual ── */
+#painel-atual {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 16px;
+}
+
+.painel-section-title {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Planeta atual — layout horizontal no mobile */
+#bloco-planeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.35);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+#painel-sym {
+  font-size: 64px;
+  line-height: 1;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+#painel-info-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#painel-nome {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+#painel-num {
+  font-size: 12px;
+  color: var(--silver-d);
+  font-style: italic;
+}
+
+#painel-intervalo {
+  font-size: 13px;
+  color: var(--silver-d);
+  letter-spacing: 0.5px;
+}
+
+/* Linha de informações extras */
+#bloco-extras {
+  display: flex;
+  gap: 8px;
+}
+
+.bloco-extra {
+  flex: 1;
+  background: rgba(255,255,255,0.25);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.bloco-label {
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+#painel-reg-sym {
+  font-size: 18px;
+  line-height: 1;
+  margin-right: 3px;
+}
+
+#painel-reg-nome {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#painel-prox {
+  font-size: 13px;
+  color: var(--silver-d);
+  line-height: 1.3;
+}
+
+/* Nascer/pôr do sol */
+#bloco-sol {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.sol-card {
+  flex: 1;
+  background: rgba(196,160,80,0.08);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sol-label { font-size: 12px; color: var(--silver-d); }
+.sol-val   { font-size: 13px; color: var(--gold); font-weight: bold; letter-spacing: 0.5px; }
+
+/* ── Tabela ── */
+#painel-tabela {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: env(safe-area-inset-bottom, 12px);
+}
+
+#tabela-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px 8px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(220,212,195,0.6);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+#tabela-titulo {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.tabela-legenda {
+  font-size: 11px;
+  color: var(--silver-d);
+  font-style: italic;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Georgia, serif;
+}
+
+thead th {
+  background: rgba(218,210,192,0.98);
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  position: sticky;
+  top: 37px;
+  z-index: 4;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(120,95,40,0.08);
+}
+
+tr.hora-diurna td  { background: transparent; }
+tr.hora-noturna td { background: rgba(0,0,0,0.03); }
+
+tr.hora-atual {
+  background: rgba(196,160,80,0.18) !important;
+}
+tr.hora-atual td { background: transparent; }
+
+tbody td {
+  padding: 8px 10px;
+  font-size: 14px;
+  color: var(--silver);
+  vertical-align: middle;
+}
+
+.col-num {
+  width: 32px;
+  color: var(--silver-d);
+  font-size: 12px;
+  text-align: right;
+}
+
+.col-tipo {
+  width: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--silver-d);
+}
+
+.col-inicio, .col-fim {
+  width: 54px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+  color: var(--silver-d);
+  font-size: 13px;
+}
+
+.col-planeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab-sym  { font-size: 18px; line-height: 1; }
+.tab-nome { font-size: 14px; }
+
+tr.hora-atual .tab-sym,
+tr.hora-atual .tab-nome { font-weight: bold; }
+
+tr.hora-atual .col-inicio,
+tr.hora-atual .col-fim,
+tr.hora-atual .col-num {
+  color: var(--gold);
+  font-weight: bold;
+}
+
+/* ── Modal de cidade ── */
+#modal-cidade {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20,18,15,0.55);
+}
+
+#modal-box {
+  position: relative;
+  z-index: 201;
+  background: var(--bg);
+  border: 1px solid var(--gold-d);
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+#modal-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+#modal-titulo {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#btn-modal-fechar {
+  background: none;
+  border: none;
+  color: var(--crimson);
+  font-size: 18px;
+  cursor: pointer;
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#modal-busca {
+  padding: 12px 14px;
+  flex-shrink: 0;
+}
+
+#input-cidade {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  color: var(--silver);
+  outline: none;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+#input-cidade:focus { border-color: var(--gold); }
+#input-cidade::placeholder { color: var(--silver-d); font-style: italic; }
+
+#lista-cidades {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 0 10px;
+}
+
+.city-loading {
+  padding: 12px 18px;
+  color: var(--silver-d);
+  font-style: italic;
+  font-size: 14px;
+}
+
+.city-item {
+  padding: 12px 18px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-bottom: 1px solid rgba(120,95,40,0.07);
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.12s;
+}
+.city-item:active { background: rgba(196,160,80,0.15); }
+
+.city-name {
+  font-size: 15px;
+  color: var(--silver);
+  font-weight: bold;
+}
+
+.city-info {
+  font-size: 12px;
+  color: var(--silver-d);
+  font-style: italic;
+}
+
+#btn-hub {
+  background: rgba(138,106,26,0.10);
+  border: 1px solid #c4a050;
+  border-radius: 5px;
+  color: #8a6a1a;
+  font-family: Georgia, serif;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 3px 9px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  -webkit-app-region: no-drag;
+}
+#btn-hub::before { content: "⊞"; font-size: 13px; line-height: 1; }
+#btn-hub:hover { background: rgba(138,106,26,0.20); }
+
+
+#header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* ── Cabeçalho em telas estreitas (celular) ── */
+#app-title    { min-width: 0; }
+#header-right { flex-shrink: 0; }
+
+@media (max-width: 420px) {
+  #header       { padding: 8px 10px; gap: 6px; }
+  #relogio      { min-width: 0; font-size: 13px; letter-spacing: 0.5px; }
+  #app-title    { font-size: 10px; letter-spacing: 1.5px; line-height: 1.3; }
+  #header-right { gap: 4px; }
+  #btn-cidade   { max-width: 96px; padding: 4px 7px; font-size: 11px; }
+  #btn-hub      { padding: 3px 6px; }
+}

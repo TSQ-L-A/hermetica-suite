@@ -1,0 +1,20 @@
+appId: com.hermetica.suite
+productName: Hermetica Suite
+directories:
+  output: dist
+files:
+  - main.js
+  - preload.js
+  - renderer/**
+  - assets/**
+win:
+  target:
+    - target: portable
+      arch: x64
+  icon: assets/icon.ico
+linux:
+  target:
+    - target: AppImage
+      arch: x64
+  icon: assets/icon.png
+  category: Utility

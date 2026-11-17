@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horae Hermetica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="header">
+    <span id="relogio">00:00:00</span>
+    <span id="app-title">☽ HORAE HERMETICA</span>
+    <div id="header-right">
+      <button id="btn-cidade">📍 —</button>
+      <button id="btn-hub" title="Voltar ao menu">Menu</button>
+      <button id="btn-close">✕</button>
+    </div>
+  </header>
+
+  <!-- ── Main ── -->
+  <div id="main">
+
+    <!-- ── Painel esquerdo: hora atual ── -->
+    <aside id="painel-atual">
+
+      <div class="painel-section-title">Hora Atual</div>
+
+      <!-- Planeta atual -->
+      <div id="bloco-planeta">
+        <span id="painel-sym">☉</span>
+        <span id="painel-nome">—</span>
+        <span id="painel-num">—</span>
+        <span id="painel-intervalo">—</span>
+      </div>
+
+      <!-- Regente do dia -->
+      <div id="bloco-regente">
+        <div class="bloco-label">Regente do Dia</div>
+        <div style="display:flex;align-items:center;gap:4px">
+          <span id="painel-reg-sym">—</span>
+          <span id="painel-reg-nome">—</span>
+        </div>
+      </div>
+
+      <!-- Próxima hora -->
+      <div id="bloco-prox">
+        <div class="bloco-label">Próxima Hora</div>
+        <div id="painel-prox">—</div>
+      </div>
+
+      <!-- Nascer / Pôr do sol -->
+      <div id="bloco-sol">
+        <div class="sol-row">
+          <span class="sol-label">☀ Nascer</span>
+          <span class="sol-val" id="info-nascer">—</span>
+        </div>
+        <div class="sol-row">
+          <span class="sol-label">🌇 Pôr</span>
+          <span class="sol-val" id="info-poente">—</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ── Painel direito: tabela ── -->
+    <section id="painel-tabela">
+
+      <div id="tabela-header">
+        <span id="tabela-titulo">Tabela das 24 Horas</span>
+        <span class="tabela-legenda">☀ diurna · ☾ noturna</span>
+      </div>
+
+      <div id="tabela-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-num">#</th>
+              <th class="col-tipo"></th>
+              <th class="col-inicio">Início</th>
+              <th class="col-fim">Fim</th>
+              <th>Planeta</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-body"></tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </div><!-- /main -->
+
+  <!-- ── Modal de Cidade ── -->
+  <div id="modal-cidade">
+    <div id="modal-overlay"></div>
+    <div id="modal-box">
+      <div id="modal-topo">
+        <span id="modal-titulo">Selecionar Localização</span>
+        <button id="btn-modal-fechar">✕</button>
+      </div>
+      <div id="modal-busca">
+        <input id="input-cidade" type="text" placeholder="Digite o nome da cidade…" autocomplete="off" />
+      </div>
+      <div id="lista-cidades"></div>
+    </div>
+  </div>
+
+  <script src="horas.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "hermetica-suite",
+  "version": "1.0.0",
+  "description": "Suite Hermética — Astrologia, Geomância e Horas Planetárias",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder --win --linux"
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}

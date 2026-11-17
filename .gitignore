@@ -1,0 +1,29 @@
+# ── Dependências e builds (gerados automaticamente) ──
+node_modules/
+dist/
+*.apk
+*.aab
+
+# ── Android: gerados pelo Gradle e pelo Capacitor ──
+android/android/.gradle/
+android/android/build/
+android/android/app/build/
+android/android/.idea/
+android/android/local.properties
+android/android/capacitor-cordova-android-plugins/
+android/android/app/src/main/assets/public/
+android/android/app/src/main/assets/capacitor.config.json
+android/android/app/src/main/assets/capacitor.plugins.json
+android/android/app/src/main/res/xml/config.xml
+*.iml
+
+# ── Chaves e segredos: NUNCA publicar ──
+*.jks
+*.keystore
+*.p12
+keystore.properties
+google-services.json
+
+# ── Sistema ──
+.DS_Store
+Thumbs.db

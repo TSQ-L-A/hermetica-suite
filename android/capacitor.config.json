@@ -1,0 +1,13 @@
+{
+  "appId": "com.hermetica.suite",
+  "appName": "Hermetica",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
