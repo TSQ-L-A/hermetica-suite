@@ -297,6 +297,7 @@ tbody td {
 
 .col-inicio, .col-fim {
   width: 54px;
+  white-space: nowrap;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.5px;
   color: var(--silver-d);

@@ -441,7 +441,7 @@ function renderTabela(periodos, agora, rolar) {
     tr.innerHTML = `
       <td class="col-num">${a.num}</td>
       <td class="col-inicio">${fmtHHMM(p.inicio)}</td>
-      <td class="col-fim">${fmtHHMM(p.fim)}</td>
+      <td class="col-fim">${p.fim - p.inicio < 60000 ? '&lt; 1 min' : fmtHHMM(p.fim)}</td>
       <td class="col-anjo">
         <div class="anjo-linha">${heb(a.hebraico)}<span class="tab-nome">${a.nome}</span></div>
         <div class="anjo-sub">${a.quinario}</div>

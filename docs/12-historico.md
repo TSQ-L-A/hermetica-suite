@@ -49,6 +49,9 @@ alarme a cada ~5 min.
   abaixo de 420 px de largura.
 - **Widget das Horas:** usava São Paulo fixo no código; agora segue a cidade do Horae. Os nomes
   dos planetas estavam sem acento.
+- **Shem:** um anjo que saía do Ascendente segundos depois da meia-noite aparecia como
+  "00:00 – 00:00". O cálculo estava certo; a tabela é que corta os segundos. Períodos com menos
+  de 1 minuto agora mostram "< 1 min" na coluna Fim.
 
 ## Novidades
 
